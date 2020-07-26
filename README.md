@@ -2,6 +2,6 @@
 
 | Mode | Status |
 | ------ | ------ |
-| Spark-Submit over K8s | OK |
-| K8s Deployment - GCP/spark-on-k8s-operator | TODO |
-| Local Jupyter PySpark | TODO |
+| K8s: Spark-Submit | OK |
+| K8s: GCP/spark-on-k8s-operator | TODO |
+| Docker: Jupyter PySpark | OK |

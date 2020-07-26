@@ -1,5 +1,5 @@
 # Whole Spark files
-devops/spark/
+devops/k8s_spark/spark/
 
 # IntelliJ
 .idea
