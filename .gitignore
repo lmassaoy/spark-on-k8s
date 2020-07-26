@@ -1,0 +1,15 @@
+# Whole Spark files
+devops/spark/
+
+# IntelliJ
+.idea
+*.ipr
+*.iml
+*.iws
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
