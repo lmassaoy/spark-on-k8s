@@ -6,9 +6,9 @@ Kubernetes clusters are becoming more and more common in all sizes of companies,
 With this in mind, I'd like to invite you to join me on a journey of learning in a seek of more wide options to do Big Data.
 
 You're about to face 3 ways of running Spark over containers:
-- K8s Cluster (as your Spark Master)
-- K8s Spark Operator (as a native module for Kubernetes)
-- Docker Jupyter Pyspark (a really nice way to do plenty of adhocs and local experiences).
+- [K8s Cluster](http://spark.apache.org/docs/latest/running-on-kubernetes.html) (as your Spark Master)
+- [K8s Spark Operator](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/master/docs/quick-start-guide.md) (as a native module for Kubernetes)
+- [Docker Jupyter Pyspark](https://hub.docker.com/r/jupyter/pyspark-notebook/) (a really nice way to do plenty of adhocs and local experiences).
 
 I deeply hope you to have fun with this experience and get yourself more confident to step outside of your traditional Hadoop cluster :)
 
