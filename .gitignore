@@ -2,9 +2,9 @@
 devops/k8s_spark/spark/
 
 # Jupyter Volume
-devops/jupyter_pyspark/volume/datasets/raw_data/
-devops/jupyter_pyspark/volume/datasets/refined_data/
-devops/jupyter_pyspark/volume/notebooks/
+devops/jupyter_pyspark/volume/datasets/raw_data/*
+devops/jupyter_pyspark/volume/datasets/refined_data/*
+devops/jupyter_pyspark/volume/notebooks/*
 
 # IntelliJ
 .idea
