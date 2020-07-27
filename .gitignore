@@ -1,0 +1,26 @@
+# Whole Spark files
+devops/k8s_spark/spark/
+
+# Jupyter Volume
+devops/jupyter_pyspark/volume/datasets/raw_data/*
+devops/jupyter_pyspark/volume/datasets/refined_data/*
+devops/jupyter_pyspark/volume/notebooks/*
+
+# IntelliJ
+.idea
+*.ipr
+*.iml
+*.iws
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+  
+# Eclipse
+.project
+.classpath
+.settings/
+bin/

@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+    jupyter:
+      image: jupyter/pyspark-notebook
+      container_name: jupy-pyspark-notebook
+      volumes:
+        - ./volume/datasets:/home/jovyan/work/datasets
+        - ./volume/notebooks:/home/jovyan/work/notebooks
+      # env_file:
+      #   - ./
+      restart: always
+      ports:
+        - 10000:8888
+        - 4040:4040
+        - 4041:4041
+        - 4042:4042
+      networks:
+        - internal
+
+
+networks:
+  internal:
+    name: jupyterNetwork
+    driver: bridge
+
+
+volumes:
+  notebook_data:
