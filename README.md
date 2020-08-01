@@ -20,7 +20,7 @@ Click [HERE](https://github.com/lmassaoy/spark-on-k8s/blob/master/devops/setup.m
 | Mode | Status |
 | ------ | ------ |
 | K8s: Spark-Submit | OK |
-| K8s: GCP/spark-on-k8s-operator | TODO |
+| GCP/spark-on-k8s-operator | OK (currently in Beta) |
 | Docker: Jupyter PySpark | OK |
 
 ## Architecture

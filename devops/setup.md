@@ -24,7 +24,7 @@ $ kubectl create clusterrolebinding spark-role --clusterrole=edit  --serviceacco
 ```
 
 ### Building image for Spark with .jars
-To make this work, what we do is create an spark docker image insertind our customs .jars to be executed. Explore the Dockerfile here to understand how we inject the custom .jars
+To make this work, what we do is create an spark docker image inserting our customs .jars to be executed. Explore the Dockerfile here to understand how we inject the custom .jars
 
 You can execute the file "img_builder.sh" or execute the commands below:
 ```
@@ -69,4 +69,46 @@ Copy and paste in your browser :)
 To enter bash and navigate in the folders you can execute (if you will):
 ```
 $ docker exec -i -t <containder_id> /bin/bash
+```
+# GCP/spark-on-k8s-operator
+### Setup the directory
+The first thing I'd like to recommend to you is to download the oficial repo from GCP
+There are plenty of good things to explore and understand how to use this feature properly
+```
+$ cd gcp-spark-on-k8s-operator/
+$ git clone https://github.com/GoogleCloudPlatform/spark-on-k8s-operator.git
+```
+
+### Installing the sparkoperator in your cluster
+Now you'll need to execute the command below (make sure you already have Helm in your enviroment)
+```
+$ helm install incubator/sparkoperator --generate-name --namespace default --set sparkJobNamespace=default --set enableWebhook=true --set webhookPort=443
+```
+
+### Creating role bind
+You can execute the command below:
+```
+$ kubectl create clusterrolebinding spark-operator-admin --clusterrole=cluster-admin --user=default:spark
+```
+
+### Building image for Spark with .jars
+To make this work, what we do is create an spark docker image inserting our customs .jars to be executed. Explore the Dockerfile here to understand how we inject the custom .jars
+
+You can execute the file "img_builder.sh" or execute the commands below:
+```
+$ eval $(minikube docker-env)
+$ docker build . -t spark:latest
+```
+Obs.: to return to your original docker deamon you just need to close the current terminal or run the commands below:
+```
+$ unset DOCKER_HOST
+$ unset DOCKER_TLS_VERIFY
+$ unset DOCKER_CERT_PATH
+```
+
+### Now you're good to go!
+You just need to create your .yaml files to start deploying your jobs using the SparkApplication category.
+Example:
+```
+$ kubectl apply -f spark-applications-yaml/spark-lyamada.yaml
 ```
