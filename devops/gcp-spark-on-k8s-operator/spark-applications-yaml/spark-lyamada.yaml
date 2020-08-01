@@ -1,0 +1,39 @@
+apiVersion: "sparkoperator.k8s.io/v1beta2"
+kind: SparkApplication
+metadata:
+  name: spark-lyamada
+  namespace: default
+spec:
+  type: Java
+  mode: cluster
+  image: "spark:latest"
+  imagePullPolicy: Never
+  mainClass: com.lyamada.spark.SparkSQLJob
+  mainApplicationFile: "local:///opt/spark/examples/spark_sql_project/spark-lyamada-1.0-SNAPSHOT.jar"
+  sparkVersion: "3.0.0"
+  restartPolicy:
+    type: Never
+  volumes:
+    - name: "test-volume"
+      hostPath:
+        path: "/tmp"
+        type: Directory
+  driver:
+    cores: 1
+    coreLimit: "1200m"
+    memory: "1024m"
+    labels:
+      version: 3.0.0
+    serviceAccount: spark
+    volumeMounts:
+      - name: "test-volume"
+        mountPath: "/tmp"
+  executor:
+    cores: 1
+    instances: 1
+    memory: "1024m"
+    labels:
+      version: 3.0.0
+    volumeMounts:
+      - name: "test-volume"
+        mountPath: "/tmp"

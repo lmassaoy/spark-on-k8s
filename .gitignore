@@ -1,5 +1,6 @@
 # Whole Spark files
 devops/k8s_spark/spark/
+devops/gcp-spark-on-k8s-operator/spark-on-k8s-operator/
 
 # Jupyter Volume
 devops/jupyter_pyspark/volume/datasets/raw_data/*
